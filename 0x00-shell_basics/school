@@ -1,2 +1,3 @@
 #!/bin/bash
-0	string SCHOOL This file content school
+0	string SCHOOL this file content school
+!:mime text/school
