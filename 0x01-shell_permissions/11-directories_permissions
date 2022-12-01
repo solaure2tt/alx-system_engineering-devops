@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo find ./ -type d -exec chmod ugo+rwx {} \ 
+sudo find ./ -type d -exec chmod 775 {} \ 
