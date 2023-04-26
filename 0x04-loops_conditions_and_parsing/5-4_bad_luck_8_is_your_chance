@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script is displaying "bad luck" for 4th loop "good luck" for 8th loop and "Best School" the remaining using while loop
+i=10
+while [ $i -gt 0 ];
+do
+	if [ $i == 7 ] ; then
+		echo "bad luck"
+	elif [ $i == 3 ] ; then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((i--))
+done

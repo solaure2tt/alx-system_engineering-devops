@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times using for loop
+declare -a s=(
+[0]="Best School"
+[1]="Best School"
+[2]="Best School"
+[3]="Best School"
+[4]="Best School"
+[5]="Best School"
+[6]="Best School"
+[7]="Best School"
+[8]="Best School"
+[9]="Best School"
+)
+for ((i = 0; i < ${#s[@]}; i++));
+do
+	echo "${s[$i]}"
+done
