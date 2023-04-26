@@ -119,3 +119,15 @@
 		Otherwise, displays the number
 		In a list format
 
+## Task 11: Read and cut
+	Write a Bash script that displays the content of the file /etc/passwd.
+	Your script should only display:
+
+		username
+		user id
+		Home directory path for the user
+
+## Task 12: Tell the story of passwd
+	Write a Bash script that displays the content of the file /etc/passwd, using the while loop + IFS.
+
+	Format: The user USERNAME is part of the GROUP_ID gang, lives in HOME_DIRECTORY and rides COMMAND/SHELL. USER ID's place is protected by the passcode PASSWORD, more info about the user here: USER ID INFO
