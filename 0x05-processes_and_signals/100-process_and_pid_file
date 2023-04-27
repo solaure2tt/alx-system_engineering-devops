@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Bash script that displays To infinity and beyond indefinitely. With a sleep 2 in between each iteration.I am invincible!!! when receiving a SIGTERM signal
+touch /var/run/myscript.pid
+echo $$ > /var/run/myscript.pid
+while :
+do
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'echo I hate the kill command; exit $?' TERM
+	trap "echo Y U no love me?!" INT
+	trap 'rm /var/run/myscript.pid; exit $?' QUIT
+done
