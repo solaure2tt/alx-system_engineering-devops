@@ -13,7 +13,7 @@ if __name__ == "__main__":
     j = {}
     for us in users:
         todos = requests.get(url + "todos",
-                             params={"userId": us.get("userId")}).json()
+                             params={"userId": us.get("id")}).json()
         tod = {}
         res = []
         idu = us.get("userId")
