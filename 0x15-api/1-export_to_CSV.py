@@ -14,7 +14,7 @@ if __name__ == "__main__":
     with open(csvfile, 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         idu = sys.argv[1]
-        username = us.get("name")
+        username = us.get("username")
         [writer.writerow(
             [idu, username, t.get("completed"), t.get("title")]
          ) for t in todos]
