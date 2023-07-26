@@ -10,12 +10,11 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
     us = requests.get(url + "users/{}".format(sys.argv[1])).json()
     todos = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
-    csvfile = sys.argv[1] + ".csv"
+    csvfile = "{}.csv".format(sys.argv[1])
     with open(csvfile, 'w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
-        for t in todos:
-            idu = "" + sys.argv[1]
-            username = us.get("name")
-            cpl = t.get("completed")
-            title = t.get("title")
-            writer.writerow([idu, username, cpl, title])
+        idu = sys.argv[1]
+        username = us.get("name")
+        [writer.writerow(
+            [idu, username, t.get("completed"), t.get("title")]
+         ) for t in todos]

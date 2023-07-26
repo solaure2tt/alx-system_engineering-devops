@@ -12,12 +12,13 @@ if __name__ == "__main__":
     f = "todo_all_employees.json"
     j = {}
     for us in users:
-        todos = requests.get(url + "todos", params={"userId": us.get("id")}).json()
+        todos = requests.get(url + "todos",
+                             params={"userId": us.get("id")}).json()
         tod = {}
         res = []
         idu = us.get("id")
         for t in todos:
-            username = us.get("name")
+            username = us.get("username")
             cpl = t.get("completed")
             title = t.get("title")
             tod["task"] = title

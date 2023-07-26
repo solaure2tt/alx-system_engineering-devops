@@ -11,20 +11,10 @@ if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
     us = requests.get(url + "users/{}".format(sys.argv[1])).json()
     todos = requests.get(url + "todos", params={"userId": sys.argv[1]}).json()
-    f = sys.argv[1] + ".json"
-    tod = {}
-    res = []
-    idu = "" + sys.argv[1]
-    for t in todos:
-        username = us.get("name")
-        cpl = t.get("completed")
-        title = t.get("title")
-        tod["task"] = title
-        tod["completed"] = cpl
-        tod["username"] = username
-        res.append(tod)
-    j = {}
-    j["" + idu] = res
-    js = json.dumps(j)
-    with open(f, "w") as file:
-        file.write(js)
+    iduser = sys.argv[1]
+    with open("{}.json".format(iduser), "w") as jsonfile:
+        json.dump({iduser: [{
+                "task": t.get("title"),
+                "completed": t.get("completed"),
+                "username": us.get("username")
+            } for t in todos]}, jsonfile)
