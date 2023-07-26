@@ -8,7 +8,7 @@ import sys
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/"
-    users = requests.get(url + "users/").json()
+    users = requests.get(url + "users").json()
     f = "todo_all_employees.json"
     j = {}
     for us in users:
@@ -16,7 +16,7 @@ if __name__ == "__main__":
                              params={"userId": us.get("id")}).json()
         tod = {}
         res = []
-        idu = us.get("userId")
+        idu = us.get("id")
         for t in todos:
             username = us.get("username")
             cpl = t.get("completed")
